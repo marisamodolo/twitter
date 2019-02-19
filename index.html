@@ -9,11 +9,15 @@
 </head>
 <body>
     <form>
-      <textarea id="message" type="text" oninput="checkText()"></textarea>
+      <textarea id="message" type="text" placeholder="O que está acontecendo?" oninput="checkText()"></textarea>
       <p id="counterText"></p>
       <input type="submit" id="tweet" disabled value="Tweet"> 
     </form>
-    <p id="result"></p>
+    
+    <container>
+      <ul id="tweets">
+      </ul>
+    </container>
     
   <script src="script.js"></script>
 </body>
