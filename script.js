@@ -6,9 +6,11 @@ function checkText(){
   if (size > 0 && size <140) {
     document.getElementById("tweet").removeAttribute("disabled");
     document.getElementById("tweet").style.backgroundColor = "#76A3D0";
+    document.getElementById("tweet").style.cursor = 'pointer';
   }else{
     document.getElementById("tweet").style.backgroundColor = "#A4A7AC";
     document.getElementById("tweet").disabled = "disabled";
+    document.getElementById("tweet").style.cursor = 'auto';
   }
   changeColor(size)
   resize();
@@ -48,6 +50,7 @@ document.getElementById("message").value = "";
 document.getElementById("tweet").style.backgroundColor = "#A4A7AC";
 document.getElementById("tweet").disabled = "disabled";
 document.getElementById("counterText").innerHTML= "140";
+document.getElementById("tweet").style.cursor = 'auto';
 }
 
 function resize(){
