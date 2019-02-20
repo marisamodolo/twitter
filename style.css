@@ -1,1 +1,94 @@
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 400;
+}
 
+body{
+    margin: 0%;
+    background-color: rgb(227, 233, 233);
+}
+
+.header{
+  padding: 1vw;
+  background-color: white;
+}
+.header img{
+ width: 3%;
+}
+
+.lobby, .feed, .header{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+.lobby{
+    background-color: #BAD0E6;
+    box-shadow: 3px 6px 10px rgba(80, 79, 79, 0.397);
+    text-align: right;
+    width: 30vw;
+    margin-left:35vw;
+    margin-right: 35vw;
+    margin-top: 3vw;
+    padding-bottom: 1vw;
+    border-radius: 0.25rem;
+}
+
+.messageBox{
+    display: inherit;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: inset 5px 4px 10px rgba(109, 108, 108, 0.397);
+    border: 2px solid #A3BED8;
+    resize: none;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: auto;
+    width: 27vw;
+}
+
+.counter{
+    display: inline-flex;
+    font-size: 0.8rem;
+    text-align: right;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+}
+
+.btnTweet{
+    font-weight: 700;
+    display: inline-flex;
+    font-size: 1.2rem;
+    color: rgb(255, 254, 254);
+    background-color: #A4A7AC;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 3px 6px 10px rgba(80, 79, 79, 0.397);
+    padding: 0.25rem 0.5rem;
+}
+
+.class-tweets{
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.class-tweets li{
+    box-shadow: 5px 4px 10px rgba(109, 108, 108, 0.397);
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.25rem;
+    opacity: 1;
+    width: 28vw;
+    padding: 1vw;
+    margin: 1px;
+    word-wrap: break-word;
+}
+
+.class-tweets p:first-child{
+  text-align: right;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 0.85rem;
+}
