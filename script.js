@@ -1,16 +1,20 @@
-document.getElementById("tweet").addEventListener("click", submit);
+let tweet = document.getElementById("newTweet");
+let counter = document.getElementById("counterText");
+let message = document.getElementById("message");
+tweet.addEventListener("click", newPost);
 document.getElementById("message").addEventListener("input", checkText);
 
+
 function checkText(){
-  let size = counter();
+  let size = counterTyp();
   if (size > 0 && size <140) {
-    document.getElementById("tweet").removeAttribute("disabled");
-    document.getElementById("tweet").style.backgroundColor = "#76A3D0";
-    document.getElementById("tweet").style.cursor = 'pointer';
+    tweet.removeAttribute("disabled");
+    tweet.style.backgroundColor = "#76A3D0";
+    tweet.style.cursor = 'pointer';
   }else{
-    document.getElementById("tweet").style.backgroundColor = "#A4A7AC";
-    document.getElementById("tweet").disabled = "disabled";
-    document.getElementById("tweet").style.cursor = 'auto';
+    tweet.style.backgroundColor = "#A4A7AC";
+    tweet.disabled = "disabled";
+    tweet.style.cursor = 'auto';
   }
   changeColor(size)
   resize();
@@ -19,81 +23,59 @@ function checkText(){
 function changeColor(size){
   switch(size){
     case 20: case 11:
-    document.getElementById("counterText").style.color = "orange";
+    counter.style.color = "orange";
     break;
     case 10: case 1:
-    document.getElementById("counterText").style.color = "red";
+    counter.style.color = "red";
     break;
     case 21: case 0:
-    document.getElementById("counterText").style.color = "black";
+    counter.style.color = "black";
     break;
-    }
+  }
 }
 
-function submit(event){
+function newPost(event){
   event.preventDefault();
   let list = document.createElement("li");
   let postText = document.createElement("p");
   let postTime = document.createElement("p");
-  let time = document.createTextNode(timeNow());
-  let text = document.createTextNode(document.getElementById("message").value);
-  postText.appendChild(time);
-  postTime.appendChild(text);
-  list.appendChild(postText);
+  postText.textContent= message.value;
+  postTime.textContent = timeNow();
   list.appendChild(postTime);
-  document.getElementById("tweets").appendChild(list);
+  list.appendChild(postText);
+  document.getElementById("postSection").appendChild(list);
   renew();
 }
 
 function renew(){
-document.getElementById("message").value = "";
-document.getElementById("tweet").style.backgroundColor = "#A4A7AC";
-document.getElementById("tweet").disabled = "disabled";
-document.getElementById("counterText").innerHTML= "140";
-document.getElementById("tweet").style.cursor = 'auto';
+  message.value = "";
+  tweet.style.backgroundColor = "#A4A7AC";
+  tweet.disabled = "disabled";
+  counter.innerHTML= "140";
+  tweet.style.cursor = 'auto';
+  message.style.height = "auto";
+  counter.style.color = "black";
 }
 
 function resize(){
-  let rowTextArea = document.getElementById("message");
-  let rows2 = document.getElementById("message").value;
-  let numerolinhas = rows2.split('\n').length;
-  console.log(numerolinhas);
-  console.log(rowTextArea);
-  console.log(rowTextArea.offsetHeight);
-  console.log(rowTextArea.scrollHeight);
-
-  if(rowTextArea.scrollHeight > rowTextArea.clientHeight){
-    console.log("entrou no aumento");
-    rowTextArea.rows += 1;
-  }else if(rowTextArea.offsetHeight = rowTextArea.clientHeight){
-    console.log("entrou no manter");
-    rowTextArea.rows = rowTextArea.rows;
-  }else if(rowTextArea.clientHeight < rowTextArea.offsetHeight){
-    console.log("entrou no diminuir");
-    rowTextArea.rows -= 1;
-  }else if(rowTextArea.rows = rowTextArea.offsetHeight){
-    rowTextArea.rows = 6;
-  }
+  message.style.height = "auto";
+  message.style.height = message.scrollHeight + 'px';
 }
 
-function counter(){
-  let msg = document.getElementById("message").value;
-  let size = 140 - msg.length;
-  document.getElementById("counterText").innerHTML= size;
-  return size;
+function counterTyp(){
+  counter.innerHTML = 140 - message.value.length;
+  return 140 - message.value.length;
 }
 
 function timeNow(){
   let data = new Date();
-  let dia = data.getDate();
-  let mes = data.getMonth();
-  let ano = data.getFullYear();
-  let hora = data.getHours();
+  let day = data.getDate();
+  let hour = data.getHours();
   let min = data.getMinutes(); 
-  dia < 10 ? dia= "0" + dia : dia = dia ;
-  hora < 10 ? hora = "0" + hora : hora = hora ;
+  day < 10 ? day= "0" + day : day = day ;
+  hour < 10 ? hour = "0" + hour : hour = hour ;
   min < 10 ? min = "0" + min : min = min ;
   let monthList = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
-  const result = hora + ":" + min + " - " + dia + " " + monthList[mes] +" " + ano;
+  const result = hour + ":" + min + " - " + day + " " + monthList[data.getMonth()] +" " + data.getFullYear();
   return result;
 }
