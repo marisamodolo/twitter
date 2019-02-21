@@ -4,7 +4,6 @@ let message = document.getElementById("message");
 tweet.addEventListener("click", newPost);
 document.getElementById("message").addEventListener("input", checkText);
 
-
 function checkText(){
   let size = counterTyp();
   if (size > 0 && size <140) {
@@ -19,7 +18,6 @@ function checkText(){
   changeColor(size)
   resize();
 }
-
 function changeColor(size){
   switch(size){
     case 20: case 11:
@@ -33,7 +31,6 @@ function changeColor(size){
     break;
   }
 }
-
 function newPost(event){
   event.preventDefault();
   let list = document.createElement("li");
@@ -46,7 +43,6 @@ function newPost(event){
   document.getElementById("postSection").appendChild(list);
   renew();
 }
-
 function renew(){
   message.value = "";
   tweet.style.backgroundColor = "#A4A7AC";
@@ -56,17 +52,14 @@ function renew(){
   message.style.height = "auto";
   counter.style.color = "#708090";
 }
-
 function resize(){
   message.style.height = "auto";
   message.style.height = message.scrollHeight + 'px';
 }
-
 function counterTyp(){
   counter.innerHTML = 140 - message.value.length;
   return 140 - message.value.length;
 }
-
 function timeNow(){
   let data = new Date();
   let day = data.getDate();
