@@ -23,13 +23,13 @@ function checkText(){
 function changeColor(size){
   switch(size){
     case 20: case 11:
-    counter.style.color = "orange";
+    counter.style.color = "#FF8C00";
     break;
     case 10: case 1:
-    counter.style.color = "red";
+    counter.style.color = "#FF0000";
     break;
     case 21: case 0:
-    counter.style.color = "black";
+    counter.style.color = "#708090";
     break;
   }
 }
@@ -54,7 +54,7 @@ function renew(){
   counter.innerHTML= "140";
   tweet.style.cursor = 'auto';
   message.style.height = "auto";
-  counter.style.color = "black";
+  counter.style.color = "#708090";
 }
 
 function resize(){
