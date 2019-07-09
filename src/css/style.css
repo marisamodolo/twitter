@@ -3,16 +3,24 @@
   font-weight: 400;
 }
 body{
-  width: 100vw;
-  margin: 0%;
-  background-color: rgb(227, 233, 233);
+  margin: 0;
+  background-color: #e3e9e9;
 }
-.borderRad{
+.border-rad{
   border-radius: 0.25rem;
 }
 .header{
   padding: 1vw;
-  background-color: white;
+  background-color: #ffffff;
+}
+.yellow{
+  color: #c78738;
+}
+.red{
+  color: #ac5050;
+}
+.blue{
+  color: #708090;
 }
 .header img{
   width: 3%;
@@ -22,21 +30,20 @@ body{
   display: flex;
   justify-content: center;
 }
-.msgBack{
+.msg-border{
   background-color: #BAD0E6;
-  box-shadow: 3px 6px 10px rgba(80, 79, 79, 0.397);
+  box-shadow: 3px 6px 10px #504f4f65;
   text-align: right;
-  width: 28vw;
-  margin-top: 3vw;
-  padding: 0vw 1vw 1vw 1vw;
+  width: 30%;
+  margin-top: 3rem;
+  padding: 0rem 1rem 1rem 1rem;
 }
-.messageBox{
-  display: inherit;
-  margin-top: 1vw;
-  margin-bottom: 0.5vw;
+.message-box{
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   padding: 0.5rem;
   background-color: #ffffff;
-  box-shadow: inset 5px 4px 10px rgba(109, 108, 108, 0.397);
+  box-shadow: inset 5px 4px 10px #6d6c6c65;
   border: 2px solid #A3BED8;
   resize: none;
   overflow: hidden;
@@ -49,35 +56,39 @@ body{
   display: inline-flex;
   font-size: 0.8rem;
   text-align: right;
-  color: #708090;
   margin: 0px;
 }
-.btnTweet{
+.btn-tweet{
   font-weight: 700;
   display: inline-flex;
   font-size: 1.2rem;
-  color: rgb(255, 254, 254);
-  background-color: #A4A7AC;
+  color: #fffefe;
+  background-color: #76A3D0;
+  cursor: pointer;
   border: none;
-  box-shadow: 3px 6px 10px rgba(80, 79, 79, 0.397);
+  box-shadow: 3px 6px 10px #504f4f65;
   padding: 0.25rem 0.5rem;
 }
-.postTweet{
-  padding-left: 0px;
+.btn-tweet:disabled{
+  background-color: #A4A7AC;
+  cursor: auto;
+}
+.post-tweet{
+  padding-left: 0;
+  width: 30%;
   display: flex;
   flex-direction: column-reverse;
 }
-.postTweet li{
-  box-shadow: 5px 4px 10px rgba(109, 108, 108, 0.397);
+.post-tweet li{
+  box-shadow: 5px 4px 10px #6d6c6c65;
   list-style: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 0.25rem;
-  width: 28vw;
-  padding: 1vw;
-  margin: 1px;
+  padding: 0rem 1rem 1rem 1rem;
   word-wrap: break-word;
+  margin-bottom: 0.2rem;
 }
-.postTweet p:first-child{
+.post-tweet p:first-child{
   text-align: right;
   font-family: 'Maven Pro', sans-serif;
   font-size: 0.85rem;
